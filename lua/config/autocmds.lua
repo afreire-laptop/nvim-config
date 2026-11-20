@@ -13,3 +13,15 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold" }, {
     end
   end,
 })
+
+-- LazyVim turns on wrap and spell checking for markdown (its "wrap_spell"
+-- autocmd). Keep the wrap but drop spell: in technical docs the dictionary
+-- flags every identifier. This runs after LazyVim's autocmd because it is
+-- defined later. <leader>us still toggles spelling for a buffer.
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("markdown_no_spell", { clear = true }),
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
