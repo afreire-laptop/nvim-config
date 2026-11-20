@@ -1,14 +1,10 @@
 # nvim-config
 
-My Neovim configuration, built on [LazyVim](https://www.lazyvim.org/) for
-TypeScript work alongside coding agents such as Claude Code.
+My Neovim configuration, built on [LazyVim](https://www.lazyvim.org/).
 
 ## Requirements
 
-- Neovim and the tools in [LazyVim's requirements](https://www.lazyvim.org/).
-- A terminal with a dark background. The colorscheme is Synthweave's transparent
-  variant, so the terminal's background shows through; it is set up beside
-  Ghostty's Cyberdyne theme.
+- Neovim and the tools in [LazyVim's requirements](https://www.lazyvim.org/)
 
 ## Install
 
@@ -27,12 +23,8 @@ exact versions pinned in `lazy-lock.json`.
 ## What it adds to LazyVim
 
 - Extras for TypeScript, Biome, Prettier, ESLint, Tailwind, Python, Rust, Go,
-  debugging, testing, and Claude Code, declared in
-  [`lua/config/lazy.lua`](lua/config/lazy.lua) instead of `:LazyExtras`.
-- Claude Code runs in its own terminal pane, and `/ide` in that session connects
-  to this Neovim ([`claudecode.lua`](lua/plugins/claudecode.lua)). Files an
-  agent changes reload when you enter a buffer or pause the cursor
-  ([`autocmds.lua`](lua/config/autocmds.lua)).
+  debugging, testing, declared in
+  [`lua/config/lazy.lua`](lua/config/lazy.lua).
 - `<leader>ay` copies an `@file:line` reference to the current line or
   selection, for pasting into a coding agent.
 - Inlay hints show on the cursor line only; `<leader>uH` shows them on every
