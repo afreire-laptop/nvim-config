@@ -45,7 +45,7 @@ require("lazy").setup({
     -- Track each plugin's latest commit; lazy-lock.json pins the exact commits in use.
     version = false,
   },
-  install = { colorscheme = { "everforest", "habamax" } },
+  install = { colorscheme = { "synthweave", "habamax" } },
   checker = { enabled = true, notify = false },
   -- No plugin here needs luarocks.
   rocks = { enabled = false },
