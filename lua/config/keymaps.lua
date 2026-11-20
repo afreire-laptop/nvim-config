@@ -20,3 +20,12 @@ vim.keymap.set("x", "<leader>ay", function()
   copy_ref(("@%s:%d-%d"):format(vim.fn.expand("%:."), first, last))
   vim.api.nvim_feedkeys(vim.keycode("<Esc>"), "n", false)
 end, { desc = "Copy @file:lines" })
+
+-- Inlay hints show on the cursor line only (config/inlay_hints.lua); this
+-- shows them on every line. <leader>uh still turns them off.
+local inlay_hints = require("config.inlay_hints")
+Snacks.toggle({
+  name = "Inlay Hints on All Lines",
+  get = inlay_hints.all_lines,
+  set = inlay_hints.set_all_lines,
+}):map("<leader>uH")

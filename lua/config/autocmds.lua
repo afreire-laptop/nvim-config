@@ -25,3 +25,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = false
   end,
 })
+
+-- Inlay hints only on the cursor line.
+require("config.inlay_hints").setup()
